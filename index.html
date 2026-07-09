@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: white;
+        }
+        .pinned-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
+        .pinned-top img {
+            width: 100%;
+            display: block;
+        }
+        .scroll-content {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .scroll-content img { width: 100%; display: block; }
+    </style>
+</head>
+<body>
+    <div class="pinned-top">
+        <img src="IMG_8491.jpg" alt="" id="pinnedImg">
+    </div>
+
+    <div class="scroll-content" id="scrollContent">
+        <div id="spacer"></div>
+        <video src="RPReplay_Final1770975615.mov" autoplay muted playsinline webkit-playsinline loop style="width:100%;display:block;"></video>
+        <img src="IMG__1857.png" alt="">
+        <img src="IMG_1858.png" alt="">
+    </div>
+</body>
+<script>
+    function setSpacer() {
+        const h = document.getElementById('pinnedImg').offsetHeight;
+        document.getElementById('spacer').style.height = h + 'px';
+    }
+    window.addEventListener('load', setSpacer);
+    window.addEventListener('resize', setSpacer);
+</script>
+</html>
